@@ -1,0 +1,36 @@
+/* Calendar styles copied from the main app (finance.opcozero.com) so the custom range looks the same.
+   The theme variables are the main app's :root values; there they already exist globally. */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --border-color: #e8eaed;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --active-bg: #eff6ff;
+  --hover-bg: #f5f5f5;
+}
+
+@keyframes adp-pop-in { from { opacity: 0; transform: scale(.95) translateY(-8px); } to { opacity: 1; transform: none; } }
+.adp-pop { animation: adp-pop-in .3s ease-out; }
+
+.premium-calendar { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: .5rem !important; }
+.premium-calendar { border: none !important; font-family: Inter, sans-serif !important; background: transparent !important; }
+.premium-calendar .react-datepicker__header { background-color: transparent !important; border-bottom: 1px solid rgba(0, 0, 0, .05) !important; padding-top: 4px !important; }
+.premium-calendar .react-datepicker__current-month { font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: .05em !important; font-size: .7rem !important; color: var(--text-primary) !important; margin-bottom: 8px !important; }
+.premium-calendar .react-datepicker__day-name { color: var(--text-muted) !important; font-weight: 700 !important; font-size: .6rem !important; text-transform: uppercase !important; width: 1.6rem !important; line-height: 1.6rem !important; margin: 0 !important; }
+.premium-calendar .react-datepicker__day { width: 2rem !important; height: 2rem !important; line-height: 2rem !important; margin: 1px !important; font-weight: 600 !important; font-size: .75rem !important; border-radius: 8px !important; transition: all .2s ease !important; color: var(--text-primary) !important; display: inline-block !important; }
+.premium-calendar .react-datepicker__day:not(.react-datepicker__day--outside-month):not(.react-datepicker__day--disabled):hover { background-color: var(--hover-bg) !important; color: var(--text-primary) !important; transform: scale(1.05); }
+.premium-calendar .react-datepicker__day--outside-month:hover { background-color: transparent !important; transform: none !important; cursor: default !important; }
+.premium-calendar .react-datepicker__day--selected,
+.premium-calendar .react-datepicker__day--range-start,
+.premium-calendar .react-datepicker__day--range-end,
+.premium-calendar .react-datepicker__day--selecting-range-start { background-color: var(--text-primary) !important; color: var(--bg-primary) !important; border-radius: 8px !important; }
+.premium-calendar .react-datepicker__day--in-range:not(.react-datepicker__day--range-start):not(.react-datepicker__day--range-end) { background-color: var(--active-bg) !important; color: var(--text-primary) !important; border-radius: 0 !important; }
+.premium-calendar .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--selecting-range-start) { background-color: var(--active-bg) !important; color: var(--text-primary) !important; border-radius: 0 !important; }
+.premium-calendar .react-datepicker__day--range-start.react-datepicker__day--range-end { border-radius: 50% !important; }
+.premium-calendar .react-datepicker__navigation { top: 8px !important; }
+.premium-calendar .react-datepicker__navigation-icon:before { border-color: #ccc !important; border-width: 2px 2px 0 0 !important; }
+.premium-calendar .react-datepicker__navigation:hover *:before { border-color: var(--text-primary) !important; }
+/* Days after maxDate (the future): greyed out like react-datepicker's default. */
+.premium-calendar .react-datepicker__day--disabled { color: #d1d5db !important; cursor: default !important; }

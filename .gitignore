@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+dashboard/dist/
+.env
+backend/.env
+dashboard/.env
+backend/.session_key
+node_modules/
+# Runtime data created by the ops scripts (never commit: backups hold user data and the session key)
+backend/logs/
+backups/
+releases/
+ops/run/
+dashboard/dist.new/
+dashboard/dist.prev/
